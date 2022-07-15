@@ -12,16 +12,16 @@
 //   4
 //   buzz
 
-fizzBuzz(maxN, {Function(String) printForUnitTest}) {
+fizzBuzz(maxN, {required Function(String) printForUnitTest}) {
   for (int i = 1; i <= maxN; ++i) {
     if (i % 3 == 0 && i % 5 == 0) {
-      print("fizz buzz");
+      printForUnitTest("fizzbuzz");
     } else if (i % 3 == 0) {
-      print("fizz");
+      printForUnitTest("fizz");
     } else if (i % 5 == 0) {
-      print("buzz");
+      printForUnitTest("buzz");
     } else {
-      print(i);
+      printForUnitTest(i.toString());
     }
   }
 }

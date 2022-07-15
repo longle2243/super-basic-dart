@@ -16,10 +16,40 @@
 
 import 'dart:math';
 
-void pyramid(int lineCount, {Function(String) printForUnitTest}) {
-  
+void pyramid(int lineCount, {required Function(String) printForUnitTest}) {
+  final list = [];
+  String t = "#";
+  for (int i = 0; i < lineCount; i++) {
+    String pc = "";
+    for (var j = 0; j < lineCount - i - 1; j++) {
+      print(j);
+      pc = pc + " ";
+    }
+    list.add(pc + t + pc);
+    t = t + "##";
+  }
+  list.forEach((element) {
+    printForUnitTest(element);
+  });
 }
 
-String pyramidLine(int level, int height) {
-  
+//String pyramidLine(int level, int height) {}
+
+void test1(int lineCount) {
+  final list = [];
+  String t = "#";
+  for (int i = 0; i < lineCount; i++) {
+    String pc = "";
+    for (var j = 0; j < lineCount - i - 1; j++) {
+      print(j);
+      pc = pc + " ";
+    }
+    list.add(pc + t + pc);
+    t = t + "##";
+  }
+  print(list);
+}
+
+void main() {
+  test1(3);
 }

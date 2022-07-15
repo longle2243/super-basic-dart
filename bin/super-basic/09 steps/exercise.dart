@@ -17,10 +17,39 @@
 //       '### '
 //       '####'
 
-void steps(int lineCount, {Function(String) printForUnitTest}) {
-  
+void steps(int lineCount, {required Function(String) printForUnitTest}) {
+  final list = [];
+  String t = "";
+  for (int i = 0; i < lineCount; i++) {
+    String pc = "";
+    for (var j = 0; j < lineCount - i - 1; j++) {
+      pc = pc + " ";
+    }
+    t = t + "#";
+    list.add(t + pc);
+  }
+  list.forEach((element) {
+    printForUnitTest(element);
+  });
 }
 
-String hashLine(int lineCount, int lineNr) {
-  
+// String hashLine(int lineCount, int lineNr) {}
+
+void steps1(int lineCount) {
+  final list = [];
+  String t = "";
+  for (int i = 0; i < lineCount; i++) {
+    String pc = "";
+    for (var j = 0; j < lineCount - i - 1; j++) {
+      pc = pc + " ";
+    }
+    t = t + "#";
+    list.add(t + pc);
+  }
+
+  print(list);
 }
+
+// void main() {
+//   steps1(5);
+// }
