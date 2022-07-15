@@ -9,7 +9,15 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 bool anagrams(String stringA, String stringB) {
-  
+  String a = sortCharsInString(stringA);
+  String b = sortCharsInString(stringB);
+  if (a == b) {
+    //print("Yes");
+    return true;
+  } else {
+    //print("No");
+    return false;
+  }
 }
 
 RegExp regExp = new RegExp(r"\w");
@@ -19,5 +27,13 @@ String filter(String input) {
 }
 
 String sortCharsInString(String input) {
-  
+  final list = input.toLowerCase().split("");
+  list.sort();
+  String result = list.join();
+  //print(result);
+  return result;
 }
+
+// void main() {
+//   anagrams("stringA", "Astring");
+// }

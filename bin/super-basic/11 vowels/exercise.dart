@@ -10,5 +10,22 @@
 RegExp regExp = new RegExp(r"");
 
 int vowels(String input) {
-  return "One line only !!!";
+//  return "One line only !!!";
+  String lower = input.toLowerCase();
+  int count = 0;
+  final lsvowels = ["a", "e", "o", "u", "i"];
+
+  final list = lower.split("");
+
+  list.forEach((element) {
+    if (lsvowels.contains(element)) {
+      count++;
+      //print(element);
+    }
+  });
+  return count;
 }
+
+// void main() {
+//   print(vowels("abcdefghijklmnopqrstuvwxyz"));
+// }
