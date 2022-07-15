@@ -11,7 +11,8 @@
 List<List<int>> chunk(List<int> array, size) {
   List<List<int>> arr1 = [];
   int n = size;
-  print(array.length);
+  //print(array.length);
+
   for (var i = 0; i < array.length; i = i + n) {
     if ((i + n) > array.length) {
       List<int> arr = array.sublist(i, array.length);

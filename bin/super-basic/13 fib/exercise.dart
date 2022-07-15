@@ -8,10 +8,36 @@
 // Example:
 //   fib(4) === 3
 
+// int fib(int n) {}
+
+// int fib2(int n) {}
+
+int fibonacci(int n) => n <= 2 ? 1 : fibonacci(n - 2) + fibonacci(n - 1);
+
 int fib(int n) {
-  
+  //String output = "";
+  final list = [];
+  for (int i = 1; i <= n; ++i) {
+    //output += fibonacci(i).toString() + ", ";
+    list.add(fibonacci(i));
+  }
+  print(list[list.length - 1]);
+  //print(output);
+  return list[list.length - 1];
 }
 
 int fib2(int n) {
-  
+  //String output = "";
+  final list = [];
+  for (int i = 1; i <= n; ++i) {
+    //output += fibonacci(i).toString() + ", ";
+    list.add(fibonacci(i));
+  }
+  print(list[list.length - 1]);
+  //print(output);
+  return list[list.length - 1];
+}
+
+main() {
+  fib(39);
 }
