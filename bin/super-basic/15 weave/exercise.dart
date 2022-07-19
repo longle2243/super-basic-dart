@@ -22,12 +22,26 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
+import 'dart:collection';
+
 import 'queue.dart';
 
 class ProxyQueue {
-  
+  late Queue queue;
+  factory ProxyQueue(Queue q1, Queue q2) {
+    Queue q = Queue();
+    int len =
+        q1.queue.length > q2.queue.length ? q1.queue.length : q2.queue.length;
+    for (var i = 0; i < len; i++) {
+      q.add(q1.remove());
+      q.add(q2.remove());
+    }
+    return ProxyQueue._default(q);
+  }
+  ProxyQueue._default(this.queue);
 }
 
 weave(Queue sourceOne, Queue sourceTwo) {
-  return "One line only !!!";
+  //return "One line only !!!";
+  return ProxyQueue(sourceOne, sourceTwo).queue;
 }
