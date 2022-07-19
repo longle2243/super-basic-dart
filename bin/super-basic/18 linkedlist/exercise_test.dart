@@ -12,9 +12,9 @@ void main() {
   test('Insert First appends a node to the start of the list', () {
     var l = new LinkedList();
     l.insertFirst(1);
-    expect(l.head.data, 1);
+    expect(l.head?.data, 1);
     l.insertFirst(2);
-    expect(l.head.data, 2);
+    expect(l.head?.data, 2);
   });
 
   test('Size returns the number of items in the linked list', () {
@@ -30,17 +30,17 @@ void main() {
   test('GetFirst returns the first element', () {
     var l = new LinkedList();
     l.insertFirst(1);
-    expect(l.getFirst().data, 1);
+    expect(l.getFirst()?.data, 1);
     l.insertFirst(2);
-    expect(l.getFirst().data, 2);
+    expect(l.getFirst()?.data, 2);
   });
 
   test('GetLast returns the last element', () {
     var l = new LinkedList();
     l.insertFirst(2);
-    expect(l.getLast().data, 2);
+    expect(l.getLast()?.data, 2);
     l.insertFirst(1);
-    expect(l.getLast().data, 2);
+    expect(l.getLast()?.data, 2);
   });
 
   test('Clear empties out the list', () {
@@ -72,10 +72,10 @@ void main() {
     l.insertFirst(1);
     l.removeFirst();
     expect(l.size(), 2);
-    expect(l.getFirst().data, 2);
+    expect(l.getFirst()?.data, 2);
     l.removeFirst();
     expect(l.size(), 1);
-    expect(l.getFirst().data, 3);
+    expect(l.getFirst()?.data, 3);
   });
 
   test('RemoveLast removes the last node when list is empty', () {
@@ -98,7 +98,7 @@ void main() {
     l.removeLast();
 
     expect(l.size(), 1);
-    expect(l.head.data, 11);
+    expect(l.head?.data, 11);
   });
 
   test('RemoveLast removes the last node when list is length 3', () {
@@ -109,7 +109,7 @@ void main() {
     l.removeLast();
 
     expect(l.size(), 2);
-    expect(l.getLast().data, 22);
+    expect(l.getLast()?.data, 22);
   });
 
   test('InsertLast on empty list adds head', () {
@@ -117,7 +117,7 @@ void main() {
     l.insertLast(11);
 
     expect(l.size(), 1);
-    expect(l.getLast().data, 11);
+    expect(l.getLast()?.data, 11);
   });
 
   test('InsertLast adds to the end of the list', () {
@@ -127,7 +127,7 @@ void main() {
     l.insertLast(22);
 
     expect(l.size(), 2);
-    expect(l.getLast().data, 22);
+    expect(l.getLast()?.data, 22);
   });
 
   test('GetAt returns the node at given index', () {
@@ -139,10 +139,10 @@ void main() {
     l.insertLast(3);
     l.insertLast(4);
 
-    expect(l.getAt(0).data, 1);
-    expect(l.getAt(1).data, 2);
-    expect(l.getAt(2).data, 3);
-    expect(l.getAt(3).data, 4);
+    expect(l.getAt(0)?.data, 1);
+    expect(l.getAt(1)?.data, 2);
+    expect(l.getAt(2)?.data, 3);
+    expect(l.getAt(3)?.data, 4);
   });
 
   test('RemoveAt removeAt doesnt crash on an empty list', () {
@@ -169,9 +169,9 @@ void main() {
     l.insertLast(2);
     l.insertLast(3);
     l.insertLast(4);
-    expect(l.getAt(0).data, 1);
+    expect(l.getAt(0)?.data, 1);
     l.removeAt(0);
-    expect(l.getAt(0).data, 2);
+    expect(l.getAt(0)?.data, 2);
   });
 
   test('removeAt deletes the node at the given index', () {
@@ -180,9 +180,9 @@ void main() {
     l.insertLast(2);
     l.insertLast(3);
     l.insertLast(4);
-    expect(l.getAt(1).data, 2);
+    expect(l.getAt(1)?.data, 2);
     l.removeAt(1);
-    expect(l.getAt(1).data, 3);
+    expect(l.getAt(1)?.data, 3);
   });
 
   test('removeAt works on the last node', () {
@@ -191,7 +191,7 @@ void main() {
     l.insertLast(2);
     l.insertLast(3);
     l.insertLast(4);
-    expect(l.getAt(3).data, 4);
+    expect(l.getAt(3)?.data, 4);
     l.removeAt(3);
     expect(l.getAt(3), null);
   });
@@ -202,7 +202,7 @@ void main() {
     var l = new LinkedList();
     l.insertAt(9, 0);
     expect(l.size(), 1);
-    expect(l.getFirst().data, 9);
+    expect(l.getFirst()?.data, 9);
   });
 
   test('inserts a new node with data at the 0 index when the list has elements',
@@ -212,10 +212,10 @@ void main() {
     l.insertLast(2);
     l.insertLast(3);
     l.insertAt(9, 0);
-    expect(l.getAt(0).data, 9);
-    expect(l.getAt(1).data, 1);
-    expect(l.getAt(2).data, 2);
-    expect(l.getAt(3).data, 3);
+    expect(l.getAt(0)?.data, 9);
+    expect(l.getAt(1)?.data, 1);
+    expect(l.getAt(2)?.data, 2);
+    expect(l.getAt(3)?.data, 3);
   });
 
   test('inserts a new node with data at a middle index', () {
@@ -225,11 +225,11 @@ void main() {
     l.insertLast(3);
     l.insertLast(4);
     l.insertAt(99, 2);
-    expect(l.getAt(0).data, 1);
-    expect(l.getAt(1).data, 2);
-    expect(l.getAt(2).data, 99);
-    expect(l.getAt(3).data, 3);
-    expect(l.getAt(4).data, 4);
+    expect(l.getAt(0)?.data, 1);
+    expect(l.getAt(1)?.data, 2);
+    expect(l.getAt(2)?.data, 99);
+    expect(l.getAt(3)?.data, 3);
+    expect(l.getAt(4)?.data, 4);
   });
 
   test('inserts a new node with data at a last index', () {
@@ -237,9 +237,9 @@ void main() {
     l.insertLast(1);
     l.insertLast(2);
     l.insertAt(99, 2);
-    expect(l.getAt(0).data, 1);
-    expect(l.getAt(1).data, 2);
-    expect(l.getAt(2).data, 99);
+    expect(l.getAt(0)?.data, 1);
+    expect(l.getAt(1)?.data, 2);
+    expect(l.getAt(2)?.data, 99);
   });
 
   test('insert a new node when index is out of bounds', () {
@@ -248,9 +248,9 @@ void main() {
     l.insertLast(2);
     l.insertAt(99, 30);
 
-    expect(l.getAt(0).data, 1);
-    expect(l.getAt(1).data, 2);
-    expect(l.getAt(2).data, 99);
+    expect(l.getAt(0)?.data, 1);
+    expect(l.getAt(1)?.data, 2);
+    expect(l.getAt(2)?.data, 99);
   });
 
   test('ForEach applies a transform to each node', () {
@@ -262,13 +262,14 @@ void main() {
     l.insertLast(4);
 
     l.forEach((node) {
-      node.data += 10;
+      int num = node.data ?? 0;
+      node.data = num + 10;
     });
 
-    expect(l.getAt(0).data, 11);
-    expect(l.getAt(1).data, 12);
-    expect(l.getAt(2).data, 13);
-    expect(l.getAt(3).data, 14);
+    expect(l.getAt(0)?.data, 11);
+    expect(l.getAt(1)?.data, 12);
+    expect(l.getAt(2)?.data, 13);
+    expect(l.getAt(3)?.data, 14);
   });
 
   group('for...in loops', () {
@@ -282,14 +283,15 @@ void main() {
 
       for (Node node in l) {
         print("hash: ${node.hashCode} data: ${node.data}");
-        node.data += 10;
+        int num = node.data ?? 0;
+        node.data = num + 10;
         print("hash: ${node.hashCode} data: ${node.data}");
       }
 
-      expect(l.getAt(0).data, 11);
-      expect(l.getAt(1).data, 12);
-      expect(l.getAt(2).data, 13);
-      expect(l.getAt(3).data, 14);
+      expect(l.getAt(0)?.data, 11);
+      expect(l.getAt(1)?.data, 12);
+      expect(l.getAt(2)?.data, 13);
+      expect(l.getAt(3)?.data, 14);
     });
 
     test('for...of works on an empty list', () {
