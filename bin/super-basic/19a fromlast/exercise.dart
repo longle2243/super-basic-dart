@@ -11,12 +11,19 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
+//import 'dart:html';
+
 import 'linked_list.dart';
 
-Node fromLast_cheating(LinkedList list, int n) {
-  
-}
+//Node fromLast_cheating(LinkedList list, int n) {}
 
 Node fromLast(LinkedList list, int n) {
-  
+  List<Node> listnode = [];
+  Node moveNode = list.head ?? Node(-1);
+  listnode.add(moveNode);
+  while (moveNode.next != null) {
+    moveNode = moveNode.next!;
+    listnode.add(moveNode);
+  }
+  return listnode[listnode.length - n - 1];
 }
