@@ -39,9 +39,9 @@ void main() {
       List<String> letters = [];
       var t = Tree();
       t.root = Node('a');
-      t.root.add('b');
-      t.root.add('c');
-      t.root.children[0].add('d');
+      t.root?.add('b');
+      t.root?.add('c');
+      t.root?.children[0].add('d');
 
       t.traverseBreadthFirst((node) {
         letters.add(node.data);
@@ -58,9 +58,9 @@ void main() {
       List<String> letters = [];
       var t = new Tree();
       t.root = new Node('a');
-      t.root.add('b');
-      t.root.add('d');
-      t.root.children[0].add('c');
+      t.root?.add('b');
+      t.root?.add('d');
+      t.root?.children[0].add('c');
 
       t.traverseDepthFirst((node) {
         letters.add(node.data);
@@ -77,11 +77,11 @@ void main() {
       List<String> letters = [];
       var t = new Tree();
       t.root = new Node('a');
-      t.root.add('b');
-      t.root.add('f');
-      t.root.children[0].add('c');
-      t.root.children[0].children[0].add('d');
-      t.root.children[0].children[0].add('e');
+      t.root?.add('b');
+      t.root?.add('f');
+      t.root?.children[0].add('c');
+      t.root?.children[0].children[0].add('d');
+      t.root?.children[0].children[0].add('e');
 
       t.traverseDepthFirst((node) {
         letters.add(node.data);
