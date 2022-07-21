@@ -23,7 +23,7 @@ void main() {
     n.insert(15);
     n.insert(0);
     n.insert(20);
-    n.left.left.left = Node(99);
+    n.left?.left?.left = Node(99);
 
     expect(validate(n), false);
   });
@@ -38,7 +38,7 @@ void main() {
     n.insert(15);
     n.insert(0);
     n.insert(20);
-    n.left.left.right = Node(99);
+    n.left?.left?.right = Node(99);
 
     expect(validate(n), false);
   });
@@ -53,7 +53,7 @@ void main() {
     n.insert(15);
     n.insert(0);
     n.insert(20);
-    n.right.right.left = Node(12);
+    n.right?.right?.left = Node(12);
 
     expect(validate(n), false);
   });

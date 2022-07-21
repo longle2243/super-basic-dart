@@ -14,6 +14,10 @@
 
 import 'linked_list.dart';
 
+///????
 Node midpoint(LinkedList list) {
-  
+  int length = list.size();
+  int midPoint = length % 2 == 0 ? length ~/ 2 - 1 : length ~/ 2;
+  Node result = list.getAt(midPoint) ?? Node(-1);
+  return result;
 }
