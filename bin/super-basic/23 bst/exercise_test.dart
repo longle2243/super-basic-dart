@@ -8,9 +8,9 @@ void main() {
     node.insert(15);
     node.insert(17);
 
-    expect(node.left.data, 5);
-    expect(node.right.data, 15);
-    expect(node.right.right.data, 17);
+    expect(node.left?.data, 5);
+    expect(node.right?.data, 15);
+    expect(node.right?.right?.data, 17);
   });
 
   test('Contains returns node with the same data', () {
@@ -22,7 +22,7 @@ void main() {
     node.insert(-5);
     node.insert(3);
 
-    var three = node.left.left.right;
+    var three = node.left?.left?.right;
     expect(node.contains(3), three);
   });
 
